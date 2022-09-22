@@ -1,4 +1,4 @@
-// Efeito de digitação / Effect to typing
+// Effect to typing
 
 const typing = document.querySelector(".text");
 
@@ -29,3 +29,12 @@ const type = () => {
 }
 
 setInterval(type, 180)
+
+// Dark-mode button
+
+const $html = document.querySelector('html')
+const $checkbox = document.querySelector('#switch')
+
+$checkbox.addEventListener('change', function() {
+    $html.classList.toggle('dark-mode')
+})

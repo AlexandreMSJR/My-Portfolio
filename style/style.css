@@ -15,6 +15,96 @@ body {
     height: 100vh;
 }
 
+/* Decoration */
+
+:root {
+    --background-image-Header: linear-gradient(135deg, #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
+    --background-image-Home: linear-gradient(45deg, #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
+    --background-image-Projects: linear-gradient(135deg, #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
+    --background-image-Footer: linear-gradient(90deg, #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
+    --color-black: black;
+    --sub-title-color: -webkit-linear-gradient(#171ad6 , #100e81, #020944 ); 
+    --text-about-name: -webkit-linear-gradient(#000, #000);
+    --text-about: black;
+    --text-projects-title: -webkit-linear-gradient(#537973 , #2a43b3);
+    --card-bg: #fff;
+    --card-title-text-color: #74EBD5;
+    --card-footer-bg-color: linear-gradient(to right, #74EBD5, #9FACE6);
+    --card-footer-text-color: white;
+    --footer-text-color: black;
+}
+
+/* Dark mode Decoration */
+
+.dark-mode:root {
+    --background-image-Header: linear-gradient(135deg, rgba(43,35,10,1) 0%, rgba(69,19,19,1) 50%, rgba(73,44,7,1) 100%);
+    --background-image-Home: linear-gradient(45deg, rgba(43,35,10,1) 0%, rgba(69,19,19,1) 50%, rgba(73,44,7,1) 100%);
+    --background-image-Projects: linear-gradient(135deg, rgba(43,35,10,1) 0%, rgba(69,19,19,1) 50%, rgba(73,44,7,1) 100%);
+    --background-image-Footer: linear-gradient(90deg, rgba(43,35,10,1) 0%, rgba(69,19,19,1) 50%, rgba(73,44,7,1) 100%);
+    --title-about: rgb(1, 196, 196);
+    --sub-title-color: -webkit-linear-gradient( #74EBD5 0%, #9FACE6 50%, #ffffff 100%); 
+    --text-about-name: -webkit-linear-gradient(rgb(3, 112, 185),rgb(0, 193, 252));
+    --text-about: rgb(193, 197, 197);
+    --text-projects-title: -webkit-linear-gradient( #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
+    --card-bg: rgb(39, 38, 38);
+    --card-title-text-color: #016351;
+    --card-footer-bg-color: linear-gradient(to right, #04473b, #9FACE6);   
+    --card-footer-text-color: black;
+    --footer-text-color: rgb(197, 193, 193);
+}
+
+/* Dark Mode Button */
+
+body.dark {
+    background: #292c35;
+  }
+  
+  .checkbox {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .label {
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    position: relative;
+    height: 26px;
+    width: 52px;
+    transform: scale(1.5);
+  
+  }
+  
+  .label .ball {
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+  }
+  
+  .checkbox:checked + .label .ball {
+    transform: translateX(26px);
+  }
+  
+  .fa-moon {
+    color: #f1c40f;
+  }
+  
+  .fa-sun {
+    color: #f39c12;
+  }
+
+/* Header */
+
 header {
     display: flex;
     justify-content: space-around;
@@ -22,7 +112,7 @@ header {
     height: 80px;
     align-items: center;
     text-align: center;
-    background-image: linear-gradient(135deg, #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
+    background-image: var(--background-image-Header);
 }
 
 header .logo {
@@ -50,7 +140,7 @@ header .menu ul li:nth-child(1) {
 }
 
 header .menu ul li a {
-    color: black;
+    color: var(--text-about);
     text-transform: uppercase;
     transition: ease 0.5s;
 }
@@ -65,11 +155,12 @@ header .menu ul li a:hover {
 #home {
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(45deg, #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
+    background-image: var(--background-image-Home);
 }
 
 #home .home-welcome {
     padding-top: 20px;
+    color: var(--title-about);
 }
 
 #home .container-home {
@@ -89,14 +180,14 @@ header .menu ul li a:hover {
 
 #home span {
     font-size: 40px;
-    background: -webkit-linear-gradient(#171ad6 , #100e81, #020944 );
+    background: var(--sub-title-color);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 #home .my-about span {
     font-size: 25px;
-    background: -webkit-linear-gradient(#000, #000);
+    background: var(--text-about-name);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -125,6 +216,7 @@ header .menu ul li a:hover {
     letter-spacing: 1.5px;
     font-size: 20px;
     margin: 20px 0;
+    color: var(--text-about);
 }
 
 #home .video-about {
@@ -166,7 +258,7 @@ header .menu ul li a:hover {
 /* Projects */
 
 #projects {
-    background-image: linear-gradient(135deg, #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
+    background-image: var(--background-image-Projects);
     text-align: center;
     width: 100%;
     height: 100%;
@@ -177,7 +269,7 @@ header .menu ul li a:hover {
 
 #projects .projects-title {
     font-size: 40px;
-    background: -webkit-linear-gradient(#537973 , #2a43b3 );
+    background: var(--text-projects-title);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -194,7 +286,7 @@ header .menu ul li a:hover {
     width: 400px;
     height: 460px;
     margin: 25px;
-    background-color: #fff;
+    background-color: var(--card-bg);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 20px 20px 20px rgba(0, 0, 0.5, 1.0);
@@ -243,7 +335,7 @@ header .menu ul li a:hover {
 }
 
 .card-footer a {
-    color: #fff;
+    color: var(--card-footer-text-color);
     display: block;
     padding: 16px;
     text-decoration: none;
@@ -252,28 +344,13 @@ header .menu ul li a:hover {
 }
 
 /* Colors Cards */
-.card-1 .card-footer {
-    background-color: #2740d1;
-}
 
-.card-1 .card-title {
-    color: #74EBD5;
-}
-
-.card-2 .card-footer {
-    background-color: #d12761;
-}
-
-.card-2 .card-title {
-    color: #74EBD5;
+.card-title {
+    color: var(--card-title-text-color);
 }
 
 .card-footer {
-    background: linear-gradient(to right, #74EBD5, #9FACE6);
-}
-
-.card-3 .card-title {
-    color: #74EBD5;
+    background: var(--card-footer-bg-color);
 }
 
 /* Animation Card Hover */
@@ -286,7 +363,7 @@ header .menu ul li a:hover {
 
 footer {
     width: 100%;
-    background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
+    background-image: var(--background-image-Footer);
     padding-top: 40px;
     padding-bottom: 40px;
 }
@@ -301,6 +378,7 @@ footer {
 
 .footer-container p {
     font-weight: 500;
+    color: var(--footer-text-color);
 }
 
 .impact-paraphrase {
@@ -312,6 +390,7 @@ footer {
 .footer-container h4 {
     text-align: center;
     font-size: 24px;
+    color: var(--footer-text-color);
 }
 
 .social-list{
@@ -362,11 +441,11 @@ footer {
 
     header {
         display: flex;
-        padding: 70px;
+        padding: 90px;
     }
 
     header .menu ul {
-        flex-direction: column;
+        align-items: center;
         gap: 10px;
     }
 
@@ -419,7 +498,7 @@ footer {
     }
     
     .footer-container h4 {
-        font-size: 15px;
+        font-size: 20px;
     }
     
     .social-list{
@@ -428,16 +507,38 @@ footer {
 
 }
 
-@media screen and (max-width: 760px) {
-    
-    header {
-        display: flex;
-        padding: 70px;
-    }
 
+@media screen and (max-width: 1024px) {
+
+        header .menu ul {
+            gap: 0px;
+        }
+
+        header .menu ul li {
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: 20px;
+        }
+        
+}
+
+@media screen and (max-width: 760px) {
+   
     header .menu ul {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
         gap: 10px;
+    }
+    
+    header .menu ul li {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-left: 5px;
+    }
+    
+    header .menu ul li:nth-child(1) {
+        padding-left: 0px;
     }
 
     #home .container-home .about-description {
@@ -541,4 +642,52 @@ footer {
         gap: 20px;
     }
 
+}
+
+@media screen and (max-width: 592px){
+
+    header .logo {
+        width: 100%;
+        text-align: start;
+    }
+    
+    header .logo img {
+        width: 200px;
+        
+    }
+   
+    header .menu ul {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    header .menu ul li {
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px;
+        text-align: center;
+    }
+    
+    
+    header .menu ul li:nth-child(1) {
+        align-items: center;
+        margin-left: 30px;
+    }
+    
+    header .menu ul li:nth-child(2) {
+        align-items: center;
+        margin-left: 30px;
+    }
+
+    header .menu ul li:nth-child(3) {
+        align-items: center;
+        margin-left: 30px;
+    }
+
+    header .menu ul li:nth-child(4) {
+        align-items: center;
+        margin-left: 30px;
+    }
 }
