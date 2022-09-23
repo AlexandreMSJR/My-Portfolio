@@ -29,6 +29,7 @@ body {
     --text-projects-title: -webkit-linear-gradient(#537973 , #2a43b3);
     --card-bg: #fff;
     --card-title-text-color: #74EBD5;
+    --card-text-color: black;
     --card-footer-bg-color: linear-gradient(to right, #74EBD5, #9FACE6);
     --card-footer-text-color: white;
     --footer-text-color: black;
@@ -48,6 +49,7 @@ body {
     --text-projects-title: -webkit-linear-gradient( #74EBD5 0%, #9FACE6 50%, #ffffff 100%);
     --card-bg: rgb(39, 38, 38);
     --card-title-text-color: #016351;
+    --card-text-color: rgb(193, 197, 197);;
     --card-footer-bg-color: linear-gradient(to right, #04473b, #9FACE6);   
     --card-footer-text-color: black;
     --footer-text-color: rgb(197, 193, 193);
@@ -324,7 +326,7 @@ header .menu ul li a:hover {
     font-size: 15px;
     width: 100%;
     margin: 0 auto;
-    color: black;
+    color: var(--card-text-color);
 }
 
 /* Card Footer */
