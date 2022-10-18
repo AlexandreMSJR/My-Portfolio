@@ -2,7 +2,7 @@
 
 const typing = document.querySelector(".text");
 
-const messages = ["Sou o Alexandre Medeiros", "Desenvolvedor em evolução", "Estou estudando TypeScript (Ts),", "JavaScript(Js), NodeJs, HTML5 e CSS3."];
+const messages = ["Sou o Alexandre Medeiros    ", "Desenvolvedor em evolução    ", "Estou estudando TypeScript (Ts),   ", "JavaScript(Js), NodeJs, SQL, HTML5 e CSS3.    "];
 
 let messageIndex = 0;
 let characterIndex = 0;
@@ -28,7 +28,7 @@ const type = () => {
     }
 }
 
-setInterval(type, 180)
+setInterval(type, 150)
 
 // Dark-mode button
 
